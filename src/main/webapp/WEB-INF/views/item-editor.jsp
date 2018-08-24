@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 
-<link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css">
+<!-- <link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css"> -->
 
 <style>
 	
@@ -93,7 +93,7 @@
 		}
 	
 	
-	input[type=submit] {
+	input[type=submit], btn btn-link {
 	    margin-top: 20px;
 	    background-color: #c0b283;
 	    border: 5px;
@@ -135,7 +135,7 @@
 			   <input class="form-control" id="description" name="description" value="${item.price}" required="required" minlength="3" autocomplete="off">
 			</div>
 			<button type="submit" class="btn btn-link">Submit</button>
-			 <a href="/" class="btn btn-link">Cancel</a>
+			 <a href="http://localhost:8080" class="btn btn-link" style="width: 100px">Cancel</a> <!-- TODO: add functionalitys -->
 		</form>
 	</div>
 

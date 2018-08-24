@@ -139,8 +139,8 @@
 			    <label for="price">Price</label>
 			   <input class="form-control" id="description" name="description" value="${item.price}" required="required" minlength="3" autocomplete="off">
 			</div>
-			<button type="submit" class="btn btn-link">Submit</button>
-			 <a href="/food" class="btn btn-link">Cancel</a>
+			<button type="submit">Submit</button>
+			 <a href="http://localhost:8080" class="btn btn-link" style="width: 100px">Cancel</a>
 		</form>
 	</div>
 

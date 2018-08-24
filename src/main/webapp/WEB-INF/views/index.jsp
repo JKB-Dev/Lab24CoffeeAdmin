@@ -141,10 +141,11 @@
 		</tr>
 	</c:forEach>
 </table>
+<br>
 
 
 <%-- TODO: implement Add A New Item option in Controller--%>
-<a class="btn btn-secondary" href="item/create">Add a new Item</a>
+<a class="btn btn-secondary" href="item/create" style="width: 100px">Add a new Item</a>
 
 </body>
 </html>

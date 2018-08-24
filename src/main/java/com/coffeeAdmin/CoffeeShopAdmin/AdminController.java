@@ -42,18 +42,5 @@ public class AdminController {
 		return mv;
 	}
 	
-//	@RequestMapping("/item")
-//	public ModelAndView listItem(@PathVariable("id") int id) {
-//		ModelAndView mv = new ModelAndView("list-item");
-//		mv.addObject("items", adminDao.delete(item, integer));
-//		mv.addObject("items", adminDao.findAll());
-//		new dao methods
-//		mv.addObject("items", adminDao.findByNameContaining(keyword));
-//		mv.addObject("items", adminDao.findByCategory(category));
-//		mv.addObject("items", adminDao.findAllCategories());
-//		
-//		
-//		return mv;
-//	}
 	
 }
