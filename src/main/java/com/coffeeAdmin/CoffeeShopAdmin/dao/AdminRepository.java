@@ -9,6 +9,7 @@ import com.coffeeAdmin.CoffeeShopAdmin.entity.Item;
 
 public interface AdminRepository extends JpaRepository<Item, Integer>{
 	
+	
 	List<Item> findByNameContaining(String keyword);
 
 }

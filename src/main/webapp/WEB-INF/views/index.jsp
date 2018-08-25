@@ -11,13 +11,12 @@
 <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">   
 <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-
-<link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css">
+<link href="/main/resources/static/css/style.css" rel="stylesheet"> <!--FIXME: not linking -->
 
 <style>
 	
 	body {
-		background-image: linear-gradient(to bottom right, #f4f4f4, white);
+		background-color: #edf6ff;
 		align-content: center;
 		padding-left: 50px;
 		padding-right: 50px;
@@ -64,6 +63,7 @@
 	    margin-top: 10px;
 	    border-collapse: collapse;
 	    width: 100%;
+	    padding: 15px;
 		}
 	
 	th {
@@ -79,7 +79,11 @@
 	}
 	
 	tr:nth-child(even){
-		background-color: #f2f2f2
+		background-color: #f2f2f2;
+		}
+		
+	tr:nth-child(odd){
+		background-color: white;
 		}
 		
 	form {
@@ -137,15 +141,14 @@
 			<td> ${ item.quantity }lb.</td>
 			<td> $${ item.price }</td>
 			<td><a href="/item/${item.item_id}/edit">Edit</a></td>
-			<td><a href="/item/${item.item_id}/delete" onclick="return confirm('Are you sure?');">Delete</a></td> <%-- TODO: implement Delete option in Controller--%>
+			<td><a href="/item/${item.item_id}/delete" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a></td>
 		</tr>
 	</c:forEach>
 </table>
 <br>
 
 
-<%-- TODO: implement Add A New Item option in Controller--%>
-<a class="btn btn-secondary" href="item/create" style="width: 100px">Add a new Item</a>
+<a class="btn btn-secondary" href="item/create" style="width: 140px">Add a new Item</a>
 
 </body>
 </html>

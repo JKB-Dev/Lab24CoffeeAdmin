@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 
-public class Item {
+public class Item {		// implement persistable?
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int item_id;
 	private String name;
@@ -32,6 +32,15 @@ public class Item {
 		this.price = price;
 	}
 
+	public Item(String name, String description, int quantity, String price) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.quantity = quantity;
+		this.price = price;
+	}
+
+	
 	public int getItem_id() {
 		return item_id;
 	}
@@ -72,6 +81,15 @@ public class Item {
 		this.price = price;
 	}
 
+//	@Override
+//	public boolean isNew(){
+//		// implement
+//	   }
+//	@Override
+//	public int getId() {
+//		// implement
+//	}
+	
 	@Override
 	public String toString() {
 		return "Items [item_id=" + item_id + ", name=" + name + ", description=" + description + ", quantity=" + quantity

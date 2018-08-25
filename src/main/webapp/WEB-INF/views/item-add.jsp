@@ -5,22 +5,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 
 <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">   
 <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
 
-<link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css">
-
 <style>
 	
 	body {
-		background-image: linear-gradient(to bottom right, #f4f4f4, white);
-		align-content: center;
+ 		background-color: #edf6ff;
+ 		align-content: center;
 		padding-left: 50px;
 		padding-right: 50px;
-		position: relative; 
+		position: relative;
 		}
 		
 	a {
@@ -60,6 +59,7 @@
 		
 	table {
 	    margin-top: 10px;
+	    margin-bottom: 10px;
 	    border-collapse: collapse;
 	    width: 100%;
 		}
@@ -80,11 +80,19 @@
 		background-color: #f2f2f2
 		}
 		
+	tr:nth-child(odd){
+		background-color: white;
+		}
+		
 	form {
 		font-family: 'Open Sans', sans-serif;
-		font-size: 30px;
-	}	
+		font-size: 25px;
+		}	
 	
+	label {
+		margin-bottom: 20px;
+		}
+		
 	input[type=text] {
 	    padding:5px; 
 	    border:2px solid #ccc; 
@@ -93,8 +101,9 @@
 		}
 	
 	
-	input[type=submit] {
-	    margin-top: 20px;
+	button.gold {
+		margin-top: 20px;
+		margin-right: 20px;
 	    background-color: #c0b283;
 	    border: 5px;
 	    -webkit-border-radius: 5px;
@@ -106,7 +115,8 @@
 	    display: inline-block;
 	    font-family: 'Zilla Slab', serif;
 	    font-size: 20px;
-		}
+	    float: left;
+		} 
 			
 </style>
 
@@ -120,30 +130,29 @@
 <div class="container">
 		<h1>${ title }</h1>
 		
-		<!-- A form without an action submits back to the same URL, which is what we want here. -->
 		<form method="post">
 			<div class="form-group">
-			    <label for="name">Name</label>
-			    <!-- pre-populate the input value from the existing food (if any) -->
+			    <label for="name">Name:</label>
 			    <input class="form-control" id="name" name="name" value="${item.name}" required="required" minlength="2" autocomplete="off">
 			</div>
 			<div class="form-group">
-			    <label for="description">Description</label>
-			     <input class="form-control" id="category" name="category" value="${item.description}" required="required" minlength="2">
+			    <label for="description">Description:</label>
+			     <input class="form-control" id="description" name="description" value="${item.description}" required="required" minlength="2">
 			</div>
 			<div class="form-group">
-			    <label for="quantity">Quantity</label>
-			   <input class="form-control" id="description" name="description" value="${item.quantity}" required="required" minlength="3" autocomplete="off">
+			    <label for="quantity">Quantity:</label>
+			   <input class="form-control" id="quantity" name="quantity" value="${item.quantity}" required="required" autocomplete="off">
 			</div>
 			<div class="form-group">
-			    <label for="price">Price</label>
-			   <input class="form-control" id="description" name="description" value="${item.price}" required="required" minlength="3" autocomplete="off">
+			    <label for="price">Price:</label>
+			   <input class="form-control" id="price" name="price" value="${item.price}" required="required" minlength="3" autocomplete="off">
 			</div>
-			<button type="submit">Submit</button>
-			 <a href="http://localhost:8080" class="btn btn-link" style="width: 100px">Cancel</a>
+			</div><br><br>
+				<button class="gold" type="submit">Submit</button>
+				<a href="/" class="btn btn-link" style="width: 80px; float: left; margin-top: 20px;">Cancel</a>
+			</div>
 		</form>
 	</div>
-
 
 </body>
 </html>
