@@ -28,8 +28,8 @@ public class AdminController {
 	
 	// item edit page, loads current values
 	@RequestMapping("/item/{id}/edit")
-	public ModelAndView showEditForm(@PathVariable("id") int id) { 
-		ModelAndView mv = new ModelAndView("item-editor"); 
+	public ModelAndView showEditForm(@PathVariable("id") int id) { // path variable is the product selected by user input
+		ModelAndView mv = new ModelAndView("item-editor"); // calls .jsp view
 		mv.addObject("title", "Edit Item");
 		mv.addObject("item", repository.findById(id).orElse(null)); 
 		return mv;
@@ -37,26 +37,26 @@ public class AdminController {
 	
 	// save new values from edit page, returns user to home
 	@PostMapping("/item/{id}/edit")
-	public ModelAndView editItem(Item item, @PathVariable("id") int id) {
-		item.setItem_id(id);
-		repository.save(item);
-		return new ModelAndView("redirect:/");
+	public ModelAndView editItem(Item item, @PathVariable("id") int id) { // path variable is the product selected by user input
+		item.setItem_id(id);	// entity method chooses existing product to modify
+		repository.save(item);	// calling respository method to save or update
+		return new ModelAndView("redirect:/"); // return to index after save
 	}
 	
 	// add-item page
-	@RequestMapping("item/create")
+	@RequestMapping("item/create") // from href
 	public String showAddForm() {
-		return "item-add";
+		return "item-add"; // calls item-add.jsp
 	}
 	
 	// create new item from user input, returns user to home
 	@PostMapping("item/create")
 	public ModelAndView addItemForm(@RequestParam("name") String name, 
 			@RequestParam("description") String description,
-			@RequestParam("quantity") int quantity, @RequestParam("price") String price) {
-		Item item = new Item(name, description, quantity, price);
-		ModelAndView mv = new ModelAndView("redirect:/");
-		repository.save(item);
+			@RequestParam("quantity") int quantity, @RequestParam("price") String price) { // item properties to be described
+		Item item = new Item(name, description, quantity, price); // calling ID-less constructor
+		ModelAndView mv = new ModelAndView("redirect:/"); // return to index when item is created
+		repository.save(item); // calling respository method to save or update
 		return mv;
 	}
 	

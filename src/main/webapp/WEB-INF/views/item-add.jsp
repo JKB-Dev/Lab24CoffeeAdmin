@@ -122,6 +122,7 @@
 
 
 <title>Add a New Item</title>
+<!-- <link href="css/style.css" rel="stylesheet">-->
 </head>
 <body>
 
@@ -136,7 +137,7 @@
 			    <input class="form-control" id="name" name="name" value="${item.name}" required="required" minlength="2" autocomplete="off">
 			</div>
 			<div class="form-group">
-			    <label for="description">Description:</label>
+			    <label for="description">Roast:</label>
 			     <input class="form-control" id="description" name="description" value="${item.description}" required="required" minlength="2">
 			</div>
 			<div class="form-group">

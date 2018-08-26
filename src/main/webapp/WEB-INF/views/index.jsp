@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">   
 <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-<link href="/main/resources/static/css/style.css" rel="stylesheet"> <!--FIXME: not linking -->
 
 <style>
 	
@@ -117,6 +116,8 @@
 </style>
 
 <title>Admin</title>
+<!-- <link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css" /> FIXME: css not reference not working-->
+
 </head>
 <body>
 
@@ -133,22 +134,21 @@
 	    <th></th>
 	    <th></th>
 	</tr>
-	<c:forEach var="item" items="${products}"> 
+	<c:forEach var="item" items="${products}"> <!-- products EL tag places results of repository.findAll() in table -->
 		<tr>
 			<td> ${ item.item_id }</td>
 			<td> ${ item.name }</td>
 			<td> ${ item.description }</td>
 			<td> ${ item.quantity }lb.</td>
 			<td> $${ item.price }</td>
-			<td><a href="/item/${item.item_id}/edit">Edit</a></td>
+			<td><a href="/item/${item.item_id}/edit">Edit</a></td> <!-- hrefs tell controller to call actions -->
 			<td><a href="/item/${item.item_id}/delete" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a></td>
 		</tr>
 	</c:forEach>
 </table>
 <br>
 
-
-<a class="btn btn-secondary" href="item/create" style="width: 140px">Add a new Item</a>
+<a class="btn btn-secondary" href="item/create" style="width: 140px">Add a new Item</a> <!-- href tells controller to call item-add.jsp -->
 
 </body>
 </html>
